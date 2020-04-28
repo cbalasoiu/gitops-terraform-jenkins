@@ -20,7 +20,7 @@ resource "aws_instance" "default" {
   vpc_security_group_ids = [aws_security_group.default.id]
   source_dest_check      = false
   instance_type          = var.instance_type
-
+  user_data = file("userdata.txt")
   tags = {
     Name = "terraform-default"
   }
