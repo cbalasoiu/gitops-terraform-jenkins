@@ -1,6 +1,6 @@
 #!/bin/bash -ex
 # output user data logs into a separate place for debugging
-#exec > >(tee /var/log/user-data.log|logger -t user-data -s 2>/dev/console) 2>&1
+exec > >(tee /var/log/user-data.log|logger -t user-data -s 2>/dev/console) 2>&1
 # get node into yum
 curl --silent --location https://rpm.nodesource.com/setup_6.x | bash -
 # install node (and npm) with yum
